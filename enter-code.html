@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset | CarMarketHub</title>
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #1e1e1e;
+          color: #fff;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        /* ===== Main Container ===== */
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          max-width: 1200px;
+        }
+        /* ===== Reset Box ===== */
+        .reset-box {
+          background: linear-gradient(135deg, #333, #555);
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+          text-align: center;
+          width: 100%;
+          max-width: 400px;
+        }
+        /* Logo */
+        .reset-box .logo {
+          width: 12vh;
+          margin-bottom: 20px;
+          border-radius: 20PX;
+          border-radius: 22PX;
+        }
+        /* Heading */
+        .reset-box h2 {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+        .reset-box p {
+          font-size: 16px;
+          color: #aaa;
+          margin-bottom: 20px;
+        }
+        /* Reset Code Input */
+        #reset-code {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 20px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          background: #222;
+          color: #fff;
+          outline: none;
+          transition: 0.3s ease-in-out;
+        }
+        #reset-code:focus {
+          border: 2px solid #ffcc00;
+          box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        /* Change Password Button */
+        #change-password-btn {
+          width: 100%;
+          background: linear-gradient(135deg, #42b72a, #2e8b57);
+          color: #fff;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+        #change-password-btn:hover {
+          background: linear-gradient(135deg, #2e8b57, #42b72a);
+          transform: translateY(-3px);
+        }
+        /* Warning Text */
+        .warning-text {
+          font-size: 14px;
+          color: #ffcc00;
+          margin-top: 20px;
+        }
+        .warning-text a {
+          color: #ffcc00;
+          font-weight: bold;
+          text-decoration: none;
+        }
+        .warning-text a:hover {
+          text-decoration: underline;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .reset-box {
+            width: 90%;
+            padding: 20px;
+          }
+          .reset-box h2 {
+            font-size: 20px;
+          }
+          .reset-box p {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 480px) {
+          .reset-box {
+            padding: 15px;
+          }
+          .reset-box h2 {
+            font-size: 18px;
+          }
+          .reset-box p {
+            font-size: 12px;
+          }
+          #reset-code {
+            padding: 10px;
+            font-size: 14px;
+          }
+          #change-password-btn {
+            font-size: 14px;
+            padding: 10px;
+          }
+          .warning-text {
+            font-size: 12px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="reset-box">
+            <!--CarMarketHub Logo -->
+            <img src="./file/icon.png" alt="CarMarketHub Logo" class="logo" />
+            <!-- Greeting Message -->
+            <h2>Hi <span id="username">Car Lover</span></h2>
+            <p>We received a request to reset your CarMarketHub password.</p>
+            <!-- Reset Code -->
+            <p>Enter the following password reset code:</p>
+            <input type="text" id="reset-code" placeholder="Enter reset code" maxlength="6">
+            <!-- Change Password Button -->
+            <button id="change-password-btn">Change password</button>
+            <!-- Warning -->
+            <p class="warning-text">
+                Didn't request this change? <a href="#">Let us know</a>.
+            </p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("change-password-btn").addEventListener("click", function() {
+          let resetCode = document.getElementById("reset-code").value;
+          if (resetCode.length === 6) {
+              alert("Code verified! Redirecting to password reset page...");
+              window.location.href = "set-new-password.html"; 
+          } else {
+              alert("Please enter a valid 6-digit reset code.");
+          }
+        });
+
+        // Dynamic Username (can be set from session storage or backend)
+        document.getElementById("username").textContent = "Car Lover"; 
+    </script>
+</body>
+</html>

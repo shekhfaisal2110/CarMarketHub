@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./file/icon.png" type="image/x-icon">
+  <title>CarMarketHub-Browse Cars</title>
+  <link rel="stylesheet" href="./css/browseCar.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
+</head>
+<body>
+  <div class="balance-container">
+    <div class="balance-section">
+        <h3>Your Balance: <span id="user-balance">₹1,00,00,00,000</span></h3>
+        <!-- Buttons for adding coins -->
+        <button id="add-coins" class="coin-button">➕ Add ₹50 Lakh</button>
+        <!-- Custom Add Button -->
+        <button id="add-custom-coins" class="coin-button">➕ Add Custom</button>
+        <!-- Custom Input (Hidden by Default) -->
+        <div id="custom-amount-container" class="hidden">
+            <input type="number" id="custom-amount" placeholder="Enter amount" />
+            <button id="confirm-custom-coins">Confirm</button>
+        </div>      
+    </div>
+</div>
+<!-- Notification -->
+<div id="coin-notification" class="coin-notification"></div>
+
+  <div class="search-container">
+    <input type="text" id="search-bar" oninput="filterByName()" placeholder="Search cars...">
+    <span id="clear-search" onclick="clearSearch()">❌</span>
+  </div>
+
+  <div class="category-container">
+    <label for="category">Choose a category:</label>
+    <select id="category">
+        <option value="all">All</option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Sports">Sports</option>
+        <option value="Luxury">Luxury</option>
+        <option value="Electric">Electric</option>
+        <option value="Supercar">Supercar</option>
+        <option value="Muscle">Muscle</option>
+        <option value="Classic">Classic</option>
+        <option value="Vintage">Vintage</option>
+        <option value="Hatchback">Hatchback</option>
+    </select>
+
+    <div class="sort-container">
+      <label for="sort">Sort By:</label>
+      <select id="sort">
+          <option value="relevance">Relevance</option>
+          <option value="popularity">Popularity</option>
+          <option value="price-low-high">Price - Low to High</option>
+          <option value="price-high-low">Price - High to Low</option>
+          <option value="newest">Newest First</option>
+      </select>
+    </div>
+  </div>
+  <!-- Browse Cars Section -->
+  <section class="browse-cars-section">
+    <div class="container">
+      <h2 class="section-title">Browse Our Cars</h2>
+      <div id="car-list" class="car-list">
+        <!-- Car cards will be added here via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/browseCar.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <title>Login - CarMarketHub</title>
+    <link rel="stylesheet" href="./css/scrollbar.css">
+   
+ <style>
+    /* ===== Global Styles ===== */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* ===== Main Container ===== */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      gap: 20px;
+    }
+    /* ===== Left Content ===== */
+    .left-content {
+      width: 50%;
+      text-align: left;
+    }
+    .logo {
+      font-size: 50px;
+      color: #1877f2;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .left-content p {
+      font-size: 18px;
+      max-width: 400px;
+    }
+    /* ===== Right Content (Login Box) ===== */
+    .right-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+    }
+    /* ===== Login Box ===== */
+    .login-box {
+      background: linear-gradient(135deg, #333, #555);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .login-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+    }
+    /* ===== Form Inputs ===== */
+    #login-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+      outline: none;
+      transition: 0.3s ease-in-out;
+    }
+    #login-form input:focus {
+      border: 2px solid #ffcc00;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    }
+    /* ===== Login Button ===== */
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ff6b6b, #ffa502);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .login-btn:hover {
+      background: linear-gradient(135deg, #ffa502, #ff6b6b);
+      transform: translateY(-3px);
+    }
+    /* Show/Hide Password Icon */
+    .password-container {
+        position: relative;
+    }
+    .password-container input {
+        width: 100%;
+        padding-right: 40px;
+    }
+    .password-container .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #bbb;
+    }
+    /* ===== Forgot Password ===== */
+    .forgot-password {
+      display: block;
+      margin-top: 10px;
+      color: #ffcc00;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+    /* ===== Divider Line ===== */
+    .line {
+      height: 1px;
+      background: #777;
+      margin: 15px 0;
+    }
+    /* ===== Signup Button ===== */
+    .signup-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #42b72a, #2e8b57);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .signup-btn:hover {
+      background: linear-gradient(135deg, #2e8b57, #42b72a);
+      transform: scale(1.05);
+    }
+    /* ===== Create Page ===== */
+    .create-page {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+    .create-page a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .create-page a:hover {
+      text-decoration: underline;
+    }
+    /* ===== Responsive Design ===== */
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+      .left-content {
+        width: 80%;
+        text-align: center;
+      }
+      .right-content {
+        width: 80%;
+      }
+      .logo {
+        font-size: 40px;
+      }
+    }
+    @media (max-width: 768px) {
+      .left-content {
+        width: 100%;
+      }
+      .right-content {
+        width: 100%;
+      }
+      .logo {
+        font-size: 35px;
+      }
+      .login-box {
+        width: 90%;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+      .logo {
+        font-size: 30px;
+      }
+      .left-content p {
+        font-size: 16px;
+      }
+      .login-box {
+        width: 100%;
+        padding: 20px;
+      }
+      #login-form input {
+        padding: 10px;
+        font-size: 14px;
+      }
+      .login-btn, .signup-btn {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .forgot-password, .create-page {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-content">
+            <h1 class="logo">CarMarketHub</h1>
+            <p>CarMarketHub helps you find, buy, and sell cars with ease.</p>
+        </div>
+        <div class="right-content">
+            <div class="login-box">
+                <form id="login-form" >
+                  <input type="email tel" id="email" name="email" placeholder="Email address" required>
+                     <!-- Password Input with Show/Hide Icon -->
+                    <div class="password-container">
+                      <input type="password" class="input" name="password" id="password" placeholder="password" required>
+                      <span class="toggle-password" onclick="togglePasswordVisibility()">👁</span>
+                    </div>
+                    <button type="submit" class="login-btn" value="submit" name="submit">Log in</button>
+                    <a href="forgot.html" class="forgot-password">Forgotten password?</a>
+                    <div class="line"></div>
+                    <a href="signup.html" class="signup-btn" >Create new account</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            let users = JSON.parse(localStorage.getItem("users")) || [];2
+            const user = users.find(user => user.emailOrPhone === email && user.password === password);
+            if (user) {
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+                alert("Login successful!");
+                window.location.href = "index.html"; 
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+
+
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var icon = document.querySelector(".toggle-password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.textContent = "🙈"; // Change icon to "Hide"
+            } else {
+                passwordField.type = "password";
+                icon.textContent = "👁"; // Change icon to "Show"
+            }
+        }
+        </script>
+  </body>      
+</html>

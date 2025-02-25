@@ -1,0 +1,116 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+/* Attractive Styling for Car Details and Checkout Form */
+#car-details {
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #6e45e2, #88d3ce);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(110, 69, 226, 0.4);
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  transition: transform 0.4s ease;
+}
+#car-details:hover {
+  transform: translateY(-5px);
+}
+#car-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#car-info img {
+  width: 250px;
+  height: auto;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+#car-info h3 {
+  font-size: 28px;
+  margin-top: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+#car-info p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Checkout Form Styling */
+#checkout-form {
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border: 2px solid #6e45e2;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#checkout-form label {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+#checkout-form input, 
+#checkout-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+#checkout-form input:focus, 
+#checkout-form textarea:focus {
+  border-color: #6e45e2;
+  outline: none;
+}
+#checkout-form button {
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #6e45e2, #88d3ce);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+#checkout-form button:hover {
+  background: linear-gradient(135deg, #88d3ce, #6e45e2);
+  transform: translateY(-5px);
+}
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  #car-info img {
+    width: 180px;
+  }
+  #car-info h3 {
+    font-size: 22px;
+  }
+  #car-info p {
+    font-size: 18px;
+  }
+  #checkout-form {
+    padding: 20px;
+  }
+  #checkout-form button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+

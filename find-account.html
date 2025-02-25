@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Account | CarMarketHub</title>
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #1e1e1e;
+          color: #fff;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        /* ===== Main Container ===== */
+        .container {
+          background: linear-gradient(135deg, #333, #555);
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+          text-align: center;
+          width: 100%;
+          max-width: 400px;
+        }
+        /* Heading */
+        .container h2 {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        .container p {
+          font-size: 16px;
+          color: #aaa;
+          margin-bottom: 20px;
+        }
+        /* ===== Form Input ===== */
+        #userInput {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 20px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          background: #222;
+          color: #fff;
+          outline: none;
+          transition: 0.3s ease-in-out;
+        }
+        #userInput:focus {
+          border: 2px solid #ffcc00;
+          box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        /* ===== Buttons ===== */
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        .cancel-btn,
+        .search-btn {
+          width: 48%;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+        .cancel-btn {
+          background: #ff6b6b;
+          color: #fff;
+        }
+        .cancel-btn:hover {
+          background: #ff3b3b;
+        }
+        .search-btn {
+          background: linear-gradient(135deg, #42b72a, #2e8b57);
+          color: #fff;
+        }
+        .search-btn:hover {
+          background: linear-gradient(135deg, #2e8b57, #42b72a);
+          transform: translateY(-3px);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .container {
+            width: 90%;
+            padding: 20px;
+          }
+          .container h2 {
+            font-size: 20px;
+          }
+          .container p {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 480px) {
+          .container {
+            padding: 15px;
+          }
+          .container h2 {
+            font-size: 18px;
+          }
+          .container p {
+            font-size: 12px;
+          }
+          .buttons {
+            flex-direction: column;
+            gap: 10px;
+          }
+          .cancel-btn,
+          .search-btn {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Your Account</h2>
+        <p>Please enter your email address or phone number to search for your account.</p>
+        <input type="text" id="userInput" placeholder="Phone number or email address">
+        <div class="buttons">
+            <button class="cancel-btn" onclick="goBack()">Cancel</button>
+            <button class="search-btn" onclick="searchAccount()">Search</button>
+        </div>
+    </div>
+    <script>
+        function searchAccount() {
+            let userInput = document.getElementById("userInput").value;
+            if (userInput.trim() === "") {
+                alert("Please enter your email or phone number.");
+            } else {
+                alert("Account found! Redirecting...");
+                window.location.href = "enter-code.html"; 
+            }
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

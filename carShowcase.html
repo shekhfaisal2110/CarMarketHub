@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarMarketHub-Car Showcase 2025</title>
+    <link rel="stylesheet" href="./css/carShowcase.css">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+        <h1 id="category-title">Category Name</h1>
+    </header>
+    <nav id="mobile-nav">
+        <div class="close-icon" onclick="closeNav()">&#10006;</div> <!-- Close button -->
+        <ul>
+            <li><a href="#" onclick="showCategory('Most Expensive Cars in the World (2025)'); closeNav();">Most Expensive Cars in the World (2025)</a></li>
+            <li><a href="#" onclick="showCategory('Most Expensive Cars in India (2025)'); closeNav();">Most Expensive Cars in India (2025)</a></li>
+            <li><a href="#" onclick="showCategory('Best Cars in India (2025)'); closeNav();">Best Cars in India (2025)</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Best Cars in the World'); closeNav();">Top 10 Best Cars in the World</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Best Sports Cars in the World'); closeNav();">Top 10 Best Sports Cars in the World</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Best Sports Cars in the India'); closeNav();"">Top 10 Best Sports Cars in the India</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Classic Cars in the World'); closeNav();">Top 10 Classic Cars in the World</a></li>
+            <li><a href="#" onclick="showCategory('Charm of vintage car in India'); closeNav();">Charm of vintage car in India</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Best Rare Cars in the World'); closeNav();">Top 10 Best Rare Cars in the World</a></li>
+            <li><a href="#" onclick="showCategory('Top 10 Best Rare Cars in the India'); closeNav();"">Top 10 Best Rare Cars in the India</a></li>
+            <li><a href="#" onclick="showCategory('Rare Car only one of them exists'); closeNav();">Rare Car only one of them exists</a></li>
+        </ul>
+    </nav>
+    <section id="car-list" class="car-container">
+        <p>Select a category to see the cars.</p>
+    </section>
+    <!-- Car List Container -->
+    <div id="car-list" class="car-container"></div>
+    
+    <!-- Car Details Modal -->
+    <div id="car-modal" class="car-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Car Image">
+            <h2 id="modal-name"></h2>
+            <p class="price" id="modal-price"></p>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    
+    <!-- Full-Size Car Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="close-image-modal" onclick="closeImageModal()">&times;</span>
+        <img id="full-size-image" src="" alt="Full Size Car Image">
+    </div>
+
+    <script src="./js/carShowcase.js">
+    </script>
+</body>
+</html>
+

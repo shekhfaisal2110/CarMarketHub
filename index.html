@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="./file/icon.png" type="image/x-icon">
+  <title>CarMarketHub</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/profile-navbar.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
+  
+</head>
+<body>
+ 
+  <header class="header">
+    <header class="header-container">
+        
+
+      <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+      <nav id="mobile-nav">
+        <div class="close-icon" onclick="closeNav()">&#10006;</div> <!-- Close button -->
+        <ul>
+          <li><a href="#header">Home</a></li>
+          <li><a href="browseCar.html">Buy a Car</a></li>
+          <li><a href="sellYourCar.html">Sell Your Car</a></li>
+          <li><a href="#featured-cars">Featured Cars</a></li>
+          <li><a href="#featured-services">Services</a></li>
+          <li><a href="myOrder.html">My Order</a></li>
+          <li><a href="carShowcase.html">Car Showcase</a></li>
+          <li><a href="#footer-contact">Contact</a></li>
+        </ul>
+      </nav>
+         <!-- Centered Logo -->
+      <div class="logo">
+          <img src="./file/icon.png" alt="CarMarketHub Logo">
+          <a href="#">CarMarketHub</a>
+      </div>
+      <!-- Sign-In/Register Buttons (Right Side) -->
+      <div class="auth-buttons">
+       <a href="login.html" class="auth-button">Sign In</a>
+       <a href="signup.html" class="auth-button">Register</a>
+      </div>
+  
+  <div class="user-profile auth-buttons" style="display: none;">
+    <button class="profile-button auth-button" onclick="toggleUserProfile()">Profile</button> <!-- Profile Button -->
+    <div id="profile-details" style="display: none;" class="profile-details"> <!-- Profile Details -->
+        <div class="profile-info">
+            <img id="user-image" src="./carAllFolderIMG/ExpensiveCarInWorld/Bugatti Divo.jpg" alt="User Image" class="profile-image" onclick="document.getElementById('image-input').click();"> <!-- Default image -->
+            <div class="user-details">
+              <input type="text" id="user-name-input" value="" class="profile-name" placeholder="Enter your name" style="display: none;" oninput="updateName()"> <!-- Input for name -->
+              <span id="user-name-display" class="profile-name"></span> <!-- Name display -->
+              <span class="profile-email" id="user-email"></span>
+          </div>
+        </div>
+        <input type="file" id="image-input" accept="image/*" style="display: none;" onchange="changeProfileImage(event)"> <!-- Hidden file input -->
+        <div class="buttons">
+          <button class="edit-button" onclick="toggleEditName()">Edit</button> <!-- Edit Button -->
+          <button class="save-button" style="display: none;" onclick="saveName()">Save</button> <!-- Save Button -->
+            <button class="cancel-button" style="display: none;" onclick="cancelEdit()">Cancel</button> <!-- Cancel Button -->
+        <!-- </div> -->
+          <button class="logout-button" onclick="logout()">Logout</button>
+          </div>
+      </div>
+  </div>
+  </header>
+  </header>
+
+    <!-- Hero Section -->
+  <section class="hero">
+    <!-- Slideshow Background -->
+    <div class="slideshow-container">
+      <img src="./carAllFolderIMG/VintageCarInIndia/HispanoSuizaH6.jpg" class="active" alt="Aston Martin Vantage">
+      <img src="./carAllFolderIMG/SportCarInIndia/NissanGT-R.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/bestCarInWorld/sscUltimateAero.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/ExpensiveCarInWorld/BugattiCentodieci.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/rareCarOnlyOneOfThemExit/FerrariP80C.jpg" alt="Jaguar F-TYPE">
+      <img src="./carAllFolderIMG/bestCarInWorld/AstonMartinVanquish.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/rareCarOnlyOneOfThemExit/FordSuperChief.jpg" alt="Bentley Continental GTC">
+      <img src="./carAllFolderIMG/ExpensiveCarInWorld/SPAutomotiveChaos.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/ExpensiveCarInWorld/Bugatti Divo.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/ExpensiveCarInIndia/AstonMartinVantage.jpg" alt="Audi R8">
+      <img src="./carAllFolderIMG/ClassicCarInWorld/Mercedes Benz 540K Spezial Roadster.jpg" alt="Pagani Zonda C12">
+      <img src="./carAllFolderIMG/bestSportCarInWorld/Porsche911GT3R.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/ClassicCarInWorld/Bugatti Type 57S Atalante.jpg" alt="Mercedes Maybach G650">
+      <img src="./carAllFolderIMG/ExpensiveCarInIndia/AstonMartinDB11.jpg" alt="Bugatti Divo">
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1 class="hero-heading">Find Your Perfect Car. Sell with Ease.</h1>
+      <p class="hero-subheading">Discover a marketplace that connects buyers and sellers with ease, trust, and convenience.</p>
+      <div class="cta-buttons">
+        <a href="browseCar.html" class="button">Browse Cars</a>
+        <a href="sellYourCar.html" class="button">Sell Your Car</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Choose Your Car</h3>
+          <p class="step-description">Browse through a wide selection of cars and choose the one that fits your needs.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Contact Seller</h3>
+          <p class="step-description">Reach out to the seller directly to ask questions and arrange a test drive.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Finalize the Deal</h3>
+          <p class="step-description">Once you're happy with the car, finalize the deal and complete the payment process.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Drive Away</h3>
+          <p class="step-description">Get your keys, enjoy your new car, and drive away with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Featured Cars Section -->
+  <section class="featured-cars" id="featured-cars">
+    <div class="container">
+      <h2 class="section-title">Featured Vehicles Just for You</h2>
+      <div class="car-cards">
+        <div class="car-card">
+          <img src="./file/2025_toyota_camry.avif" alt="Car 1" class="car-image">
+          <h3 class="car-title">Toyota Camry</h3>
+          <p class="car-description">A sleek and reliable sedan with great fuel efficiency and comfort.</p>
+          <a href="toyota.html" class="button">View Details</a>
+        </div>
+        <div class="car-card">
+          <img src="./file/2015_honda_accord.jpg" alt="Car 2" class="car-image">
+          <h3 class="car-title">Honda Accord</h3>
+          <p class="car-description">Spacious interior and advanced technology features for a smooth drive.</p>
+          <a href="honda.html" class="button">View Details</a>
+        </div>
+        <div class="car-card">
+          <img src="./file/bmw x5.jpeg" alt="Car 3" class="car-image">
+          <h3 class="car-title">BMW X5</h3>
+          <p class="car-description">Luxury SUV with powerful performance and premium features.</p>
+          <a href="bmw.html" class="button">View Details</a>
+        </div>
+        <div class="car-card">
+          <img src="./file/ford-mustang.jpg" alt="Car 4" class="car-image">
+          <h3 class="car-title">Ford Mustang</h3>
+          <p class="car-description">Iconic sports car with aggressive styling and thrilling performance.</p>
+          <a href="ford.html" class="button">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="value-propositions">
+        <div class="proposition">
+          <div class="icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3 class="title">Wide Selection</h3>
+          <p class="description">Browse from a large variety of vehicles, including the latest models and classic favorites.</p>
+        </div>
+        <div class="proposition">
+          <div class="icon">
+            <i class="fas fa-thumbs-up"></i>
+          </div>
+          <h3 class="title">Trusted Sellers</h3>
+          <p class="description">All our sellers are verified, ensuring you buy with confidence and peace of mind.</p>
+        </div>
+        <div class="proposition">
+          <div class="icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <h3 class="title">Affordable Pricing</h3>
+          <p class="description">Find cars that suit your budget with transparent pricing and great deals.</p>
+        </div>
+        <div class="proposition">
+          <div class="icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="title">Secure Transactions</h3>
+          <p class="description">We use industry-standard security measures to protect your personal and payment information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Featured Services Section -->
+  <section class="featured-services" id="featured-services">
+    <div class="container">
+      <h2 class="section-title">Featured Services</h2>
+      <div class="services">
+        <div class="service">
+          <div class="service-icon">
+            <i class="fas fa-car-side"></i>
+          </div>
+          <h3 class="service-title">Car Listings</h3>
+          <p class="service-description">Browse a wide variety of cars for sale, ranging from new to pre-owned models.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 class="service-title">Verified Sellers</h3>
+          <p class="service-description">All sellers are verified to ensure safe and trusted transactions.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3 class="service-title">Secure Payments</h3>
+          <p class="service-description">We provide secure payment systems to protect your financial information during transactions.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="service-title">24/7 Customer Support</h3>
+          <p class="service-description">Get help at any time with our round-the-clock customer support service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="./file/cus_1.jpg" alt="Customer 1">
+        </div>
+        <p class="testimonial-text">"CarMarketHub made it so easy for me to find my dream car! The process was smooth and I felt safe buying from a verified seller."</p>
+        <h4 class="testimonial-name">Shekh Zibran</h4>
+        <p class="testimonial-location">Mumbai, India</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="./file/cus_2.jpg" alt="Customer 2">
+        </div>
+        <p class="testimonial-text">"Excellent customer support! I had a question about my purchase and they helped me right away. Highly recommend!"</p>
+        <h4 class="testimonial-name">Kayasth Vyom</h4>
+        <p class="testimonial-location">Ahmedabad, India</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="./file/cus_3.jpg" alt="Customer 3">
+        </div>
+        <p class="testimonial-text">"I sold my car through CarMarketHub and the experience was seamless. The platform helped me find the right buyer quickly."</p>
+        <h4 class="testimonial-name">Shekh Sara</h4>
+        <p class="testimonial-location">Bangalore, India</p>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button class="prev-btn">&#10094;</button>
+      <button class="next-btn">&#10095;</button>
+    </div>
+  </div>
+</section>
+  <!-- over achievement section  -->
+  <section class="achievements-section">
+    <div class="container">
+        <h1 class="section-title">Our Achievements</h1>
+        <div class="achievement-cards">
+            <div class="achievement-card">
+                <div class="icon"><i class="fas fa-trophy"></i></div>
+                <h2 class="achievement-title">500+ Cars Sold</h2>
+                <p class="achievement-description">We've successfully facilitated the sale of over 500 cars in the past year, connecting buyers and sellers.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h2 class="achievement-title">20,000+ Users</h2>
+                <p class="achievement-description">Our platform has helped over 20,000 users find their perfect car or sell their vehicle with ease.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                <h2 class="achievement-title">Verified Sellers</h2>
+                <p class="achievement-description">All our sellers are fully verified, ensuring trust and security for all transactions.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h2 class="achievement-title">Top-Rated Service</h2>
+                <p class="achievement-description">We've earned a top rating from customers for our reliable, secure, and user-friendly platform.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- Call to Action Section -->
+  <section class="cta">
+    <div class="container">
+      <h2 class="cta-title">Ready to Find Your Dream Car?</h2>
+      <p class="cta-description">Browse through our extensive collection of verified listings and make your dream car a reality today.</p>
+      <a href="browseCar.html" class="button">Browse Cars</a>
+    </div>
+  </section>
+  <!-- Car Comparison Tool Section -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2 class="section-title">Compare Cars</h2>
+      <div class="car-selection">
+        <label for="car1" style="color: #fff;">Select Car 1:</label>
+        <select id="car1" class="car-select">
+          <!-- Car options will be dynamically filled here -->
+        </select>
+        <br><label for="car2" style="color: #fff;">Select Car 2:</label>
+        <select id="car2" class="car-select">
+          <!-- Car options will be dynamically filled here -->
+        </select>
+      </div>
+      <div id="comparison-results" class="comparison-results">
+        <!-- Comparison results will be displayed here -->
+      </div>
+    </div>
+  </section>
+   <!-- Newsletter Subscription Section -->
+   <section class="newsletter-section">
+    <div class="newsletter-container">
+      <h2 class="newsletter-title">Stay Updated with CarMarketHub!</h2>
+      <p class="newsletter-description">Subscribe to our newsletter for the latest car deals and updates.</p>  
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" id="email" class="newsletter-input" placeholder="Enter your email address" required />
+        <button type="submit" class="button">Subscribe</button>
+      </form>
+      <p id="success-message" class="success-message"></p>
+      <p id="error-message" class="error-message"></p>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" class="link">Home</a></li>
+          <li><a href="#featured-services" class="link">Services</a></li>
+          <li><a href="myOrder.html" class="link">My order</a></li>
+          <li><a href="carShowcase.html" class="link">Car Showcase</a></li>
+          <li><a href="#footer-contact" class="link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-contact" id="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:info@carmarkethub.com">info@carmarkethub.com</a></p>
+        <p>Phone: +91 9173190372</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CarMarketHub. All Rights Reserved for Shekh faisal.</p>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/CarComparisonTool.js"></script>
+  <script>
+  // Show alert when the page loads
+  window.addEventListener("load", function () {
+        alert("🚗 Welcome to CarMarketHub! This website is just a dream car buying and selling experience, not a real transaction platform. Find your dream car, compare prices, and explore the latest models from top brands. 💡 Start browsing our collection and turn your dream into a virtual reality!");
+    });
+
+    // Slideshow Effect
+  document.addEventListener("DOMContentLoaded", function () {
+      let images = document.querySelectorAll(".slideshow-container img");
+      let index = 0;
+      function changeImage() {
+          images[index].classList.remove("active");
+          index = (index + 1) % images.length;
+          images[index].classList.add("active");
+      }   
+      setInterval(changeImage, 4000); 
+  });
+  </script>
+</body>
+</html>

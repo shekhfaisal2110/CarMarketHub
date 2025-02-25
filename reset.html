@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <title>Reset Your Password | CarMarketHub</title>
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #1e1e1e;
+          color: #fff;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        /* ===== Main Container ===== */
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          max-width: 1200px;
+        }
+        /* ===== Reset Password Box ===== */
+        .reset-password-box {
+          background: linear-gradient(135deg, #333, #555);
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+          text-align: center;
+          width: 100%;
+          max-width: 400px;
+        }
+        /* Heading */
+        .reset-password-box h2 {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        .reset-password-box p {
+          font-size: 16px;
+          color: #aaa;
+          margin-bottom: 20px;
+        }
+        /* ===== Form Inputs ===== */
+        #reset-password-form .option {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+        #reset-password-form input[type="radio"] {
+          margin-right: 10px;
+        }
+        #reset-password-form label {
+          font-size: 16px;
+          color: #fff;
+        }
+        .email-mask {
+          color: #bbb;
+          font-size: 14px;
+        }
+        /* ===== Buttons ===== */
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        .not-you-btn,
+        .continue-btn {
+          width: 48%;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+        .not-you-btn {
+          background: #ff6b6b;
+          color: #fff;
+        }
+        .not-you-btn:hover {
+          background: #ff3b3b;
+        }
+        .continue-btn {
+          background: linear-gradient(135deg, #42b72a, #2e8b57);
+          color: #fff;
+        }
+        .continue-btn:hover {
+          background: linear-gradient(135deg, #2e8b57, #42b72a);
+          transform: translateY(-3px);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .reset-password-box {
+            width: 90%;
+            padding: 20px;
+          }
+          .reset-password-box h2 {
+            font-size: 20px;
+          }
+          .reset-password-box p {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 480px) {
+          .reset-password-box {
+            padding: 15px;
+          }
+          .reset-password-box h2 {
+            font-size: 18px;
+          }
+          .reset-password-box p {
+            font-size: 12px;
+          }
+          .buttons {
+            flex-direction: column;
+            gap: 10px;
+          }
+          .not-you-btn,
+          .continue-btn {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="reset-password-box">
+            <h2>Reset your password</h2>
+            <p>How do you want to get the code to reset your password?</p>
+            <form id="reset-password-form">
+                <div class="option">
+                    <input type="radio" id="email-option" name="reset-option" value="email" checked>
+                    <label for="email-option">Send code via email</label>
+                    <p class="email-mask">****@gmail.com</p>
+                </div>
+                <div class="option">
+                    <input type="radio" id="password-option" name="reset-option" value="password">
+                    <label for="password-option">Enter password to log in</label>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="not-you-btn">Not you?</button>
+                    <button type="submit" class="continue-btn">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("reset-password-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let selectedOption = document.querySelector('input[name="reset-option"]:checked').value;
+
+            if (selectedOption === "email") {
+                alert("A reset code has been sent to your email.");
+                window.location.href = "enter-code.html"; // Redirect to code entry page
+            } else {
+                alert("Redirecting to login page...");
+                window.location.href = "login.html"; // Redirect to login
+            }
+        });
+        // Not You Button Action
+        document.querySelector(".not-you-btn").addEventListener("click", function() {
+            window.location.href = "find-account.html"; // Redirecting to find account page
+        });
+    </script>
+</body>
+</html>

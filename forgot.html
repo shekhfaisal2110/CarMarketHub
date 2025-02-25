@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | CarMarketHub</title>
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* ===== Forgot Password Box ===== */
+        .forgot-password-box {
+            background: linear-gradient(135deg, #333, #555);
+            padding: 30px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .forgot-password-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+        }
+        .forgot-password-box h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .forgot-password-box p {
+            font-size: 14px;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+        /* ===== Input Field ===== */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #222;
+            color: #fff;
+            outline: none;
+            transition: 0.3s ease-in-out;
+        }
+        input:focus {
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        /* ===== Buttons ===== */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .cancel-btn, .search-btn {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .cancel-btn {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            color: white;
+        }
+        .cancel-btn:hover {
+            background: linear-gradient(135deg, #b71c1c, #d32f2f);
+            transform: scale(1.05);
+        }
+        .search-btn {
+            background: linear-gradient(135deg, #42b72a, #2e8b57);
+            color: white;
+        }
+        .search-btn:hover {
+            background: linear-gradient(135deg, #2e8b57, #42b72a);
+            transform: scale(1.05);
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="forgot-password-box">
+            <h2>Find Your Account</h2>
+            <p>Please enter your email address or mobile number to search for your account.</p>
+            <form id="forgot-password-form">
+                <input type="text" id="email-phone" placeholder="Email address or mobile number" required>
+                <div class="buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="search-btn">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("forgot-password-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let inputField = document.getElementById("email-phone");
+            let inputValue = inputField.value.trim();
+            if (inputValue === "") {
+                alert("Please enter your email or mobile number.");
+                return;
+            }
+            // Simulating search process
+            alert("Searching for account...");
+
+            // Here, you can add logic to check user account existence
+            // Example: Redirecting to password reset page
+            window.location.href = "reset.html";
+        });
+        // Cancel Button Action
+        document.querySelector(".cancel-btn").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

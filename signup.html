@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./file/icon.png" type="image/x-icon">
+    <title>CarMarketHub-Signup</title>
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <style>
+        /* ===== Global Styling ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* ===== Facebook Logo ===== */
+        .logo {
+            font-size: 50px;
+            color: #1877f2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        /* ===== Signup Box ===== */
+        .signup-box {
+            background: linear-gradient(135deg, #333, #555);
+            padding: 30px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .signup-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+        }
+        .signup-box h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .signup-box p {
+            font-size: 14px;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+        /* ===== Input Fields ===== */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #222;
+            color: #fff;
+            outline: none;
+            transition: 0.3s ease-in-out;
+        }
+        .input:focus, select:focus {
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        /* ===== Date of Birth & Gender Selection ===== */
+        .gender {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .gender label {
+            flex: 1;
+        }
+        gender {
+            background: #444;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        gender input {
+            margin-right: 5px;
+        }
+        /* ===== Terms & Conditions ===== */
+        .terms {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+        .terms a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        /* Show/Hide Password Icon */
+        .password-container {
+            position: relative;
+        }
+        .password-container input {
+            width: 100%;
+            padding-right: 40px;
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #bbb;
+        }
+        /* ===== Signup Button ===== */
+        .signup-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #42b72a, #2e8b57);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .signup-btn:hover {
+            background: linear-gradient(135deg, #2e8b57, #42b72a);
+            transform: scale(1.05);
+        }
+        /* ===== Login Link ===== */
+        .login-link {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .login-link a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .signup-box {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 35px;
+            }
+            .signup-box {
+                width: 100%;
+                padding: 20px;
+            }
+            .signup-btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="logo">CarMarketHub</h1>
+    <div class="signup-box">
+        <h2>Create a new account</h2>
+        <p>It's quick and easy.</p>  
+        <form id="signup-form">
+            <!-- Name Fields -->
+            <div class="name-fields">
+                <input type="text" id="first-name" class="input" placeholder="First name" required>
+                <input type="text" id="surname" class="input" placeholder="Surname" required>
+            </div>
+            <!-- Gender Selection -->
+            <div class="gender">
+                <label>Gender</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+            </div>
+            <input type="email tel"  class="input" id="email" placeholder="Mobile number or email address" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+            <!-- Password Input with Show/Hide Icon -->
+            <div class="password-container">
+                <input type="password" class="input" id="password" placeholder="New password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">👁</span>
+            </div>
+            <p class="terms">
+                By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookies Policy</a>.
+            </p>
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+        <p class="login-link"><a href="login.html">Already have an account?</a></p>
+    </div>
+
+    <script >
+        document.getElementById("email").addEventListener("input", function () {
+            const inputField = this;
+            const value = inputField.value.trim();
+            const numberPattern = /^[0-9]{10}$/; // Matches exactly 10-digit numbers
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation pattern           
+            if (numberPattern.test(value) || emailPattern.test(value)) {
+                inputField.style.border = "2px solid green"; // Valid input
+            } else {
+                inputField.style.border = "2px solid red"; // Invalid input
+            }
+        });
+
+        document.getElementById("signup-form").addEventListener("submit", function (event) {
+            event.preventDefault();        
+            const emailOrPhone = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const numberPattern = /^[0-9]{10}$/; // Matches exactly 10-digit numbers
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation pattern
+            // Validate if input is a valid email or 10-digit phone number
+            if (!numberPattern.test(emailOrPhone) && !emailPattern.test(emailOrPhone)) {
+                alert("Please enter a valid 10-digit mobile number or a valid email address.");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            // Check if the entered email or phone number already exists
+            if (users.some(user => user.emailOrPhone === emailOrPhone)) {
+                alert("This email or mobile number is already registered. Please log in.");
+                return;
+            }
+            let newUser = { emailOrPhone, password };
+            users.push(newUser);
+            localStorage.setItem("users", JSON.stringify(users));
+        
+            alert("Signup successful! Please log in.");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var icon = document.querySelector(".toggle-password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.textContent = "🙈"; // Change icon to "Hide"
+            } else {
+                passwordField.type = "password";
+                icon.textContent = "👁"; // Change icon to "Show"
+            }
+        }
+    </script>
+</body>
+</html>

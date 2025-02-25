@@ -1,0 +1,130 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+}
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6600, #ffcc00);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+}
+.button:active {
+  transform: translateY(2px);
+}
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+.fc-details {
+  background-color: #333; 
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.fc-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f2f2f2;
+}
+.fc-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+.fc-features h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f2f2f2;
+}
+.fc-features ul {
+  list-style-type: none;
+  padding: 0;
+}
+.fc-features li {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 5px 0;
+}
+/* Exit Button Styles */
+.exit-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6600, #ffcc00);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.exit-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+}
+.button:active {
+  transform: translateY(2px);
+}
+/* For screens with max width 768px */
+@media (max-width: 768px) {
+  .fc-title {
+      font-size: 1.6rem;
+  }
+  .fc-description {
+      font-size: 0.95rem;
+  }
+  .fc-features h2 {
+      font-size: 1.3rem;
+  }
+  .fc-features li {
+      font-size: 0.9rem;
+  }
+  .exit-btn {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+  }
+}
+/* For screens with max width 450px */
+@media (max-width: 450px) {
+  .fc-title {
+      font-size: 1.4rem;
+  }
+  .fc-description {
+      font-size: 0.9rem;
+  }
+  .fc-features h2 {
+      font-size: 1.1rem;
+  }
+  .fc-features li {
+      font-size: 0.85rem;
+  }
+  .exit-btn {
+      font-size: 1.2rem;
+      padding: 14px 30px;
+  }
+}

@@ -1,0 +1,365 @@
+/* Media Queries */
+/* For screens with max-width of 768px */
+@media (max-width: 1040px) {
+  .navbar {
+    display: none; 
+    z-index: 5;
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background-color: #222;
+    padding: 20px;
+    margin-top: -10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  } 
+  .navbar.active {
+    display: block; 
+  } 
+  .menu-toggle {
+    display: flex;
+  } 
+  .nav-list {
+    flex-direction: column;
+    margin-top: 20px;
+  } 
+  .nav-list li {
+    margin: 10px 0;
+  }  
+  .cta-buttons {
+    margin-top: 20px;
+  }
+  .button {
+    margin-top: -18px;
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+  .hero {
+    height: 80vh;
+    background-position: center top;
+  }   
+  .hero-heading {
+    font-size: 2.5rem;
+  }    
+  .hero-subheading {
+    font-size: 1rem;
+  }    
+  .cta-buttons {
+    flex-direction: column;
+  }   
+  .button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    
+  }
+  .steps {
+    justify-content: center;
+  }    
+  .step {
+    width: 45%;
+    margin-bottom: 20px;
+  }    
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }    
+  .step-title {
+    font-size: 1.2rem;
+  }    
+  .step-description {
+    font-size: 0.9rem;
+  }
+  .car-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .car-card {
+    padding: 20px;
+  }
+  .car-title {
+    font-size: 1.2rem;
+  }
+  .car-description {
+    font-size: 0.9rem;
+  }
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+  .value-propositions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .proposition {
+    padding: 15px;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .icon {
+    font-size: 2.5rem;
+  }
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service {
+    padding: 15px;
+  }
+  .service-title {
+    font-size: 1.2rem;
+  }
+  .service-description {
+    font-size: 0.9rem;
+  }
+  .service-icon {
+    font-size: 2.5rem;
+  }
+  .testimonial-carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial-card {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+  .achievement-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cta-title {
+    font-size: 2rem;
+  }
+  .cta-description {
+    font-size: 1rem;
+  }
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 12px 35px;
+  }
+  .comparison-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .car-details {
+    width: 45%;
+  }
+  .comparison-results {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .compare-btn {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+  .newsletter-title {
+    font-size: 1.8rem;
+  }
+  .newsletter-description {
+    font-size: 1rem;
+  }
+  .newsletter-input {
+    padding: 8px 15px;
+    margin-bottom: 33px;
+  }
+  .newsletter-btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links,
+  .footer-social,
+  .footer-contact {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links h4,
+  .footer-social h4,
+  .footer-contact h4 {
+    font-size: 1.1rem;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-bottom {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width:580px){
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo{
+    margin-left: 22%;
+  }
+  .logo a {
+    font-size: 20px;
+  }
+  .navbar{
+    margin-top: 20px;
+  }
+  .nav-list li {
+    margin: 8px 0;
+  }
+  .button{
+    margin-top: 1px;
+  }
+  .cta-buttons .cta-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+  }   
+  .menu-toggle {
+    margin-top: -32px;
+    margin-left: 90%;
+  }
+}
+/* For screens with max-width of 350px */
+@media (max-width: 436px) { 
+  .hero {
+    height: 70vh;
+    background-position: center top;
+  }
+  .hero-heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .hero-subheading {
+    font-size: 0.9rem;
+  }
+  
+  .car-cards {
+    grid-template-columns: 1fr;
+  }
+  .car-title {
+    font-size: 1rem;
+  }
+  .car-description {
+    font-size: 0.8rem;
+  }
+  
+  .value-propositions {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 0.8rem;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step-title {
+    font-size: 1rem;
+  }
+  .step-description {
+    font-size: 0.8rem;
+  }
+  .step-icon {
+    font-size: 2rem;
+  }
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .service-title {
+    font-size: 1rem;
+  }
+  .service-description {
+    font-size: 0.8rem;
+  }
+  .service-icon {
+    font-size: 2rem;
+  }
+  .testimonial-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .testimonial-text {
+    font-size: 0.8rem;
+  }
+  .section-title {
+    font-size: 0.8rem;
+  }
+  .testimonial-name {
+    font-size: 1rem;
+  }
+  .achievement-cards {
+    grid-template-columns: 1fr;
+  }
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  .cta-description {
+    font-size: 0.9rem;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 30px;
+  }
+  .comparison-form select {
+    font-size: 0.9rem;
+  }
+  .compare-btn {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+  .car-details {
+    width: 100%;
+    padding: 15px;
+  }
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+  .newsletter-description {
+    font-size: 0.9rem;
+  }
+  .newsletter-input {
+    padding: 7px 12px;
+    font-size: 0.9rem;
+  }
+  .button {
+    padding: 7px 12px;
+    font-size: 0.9rem;
+  }
+  .footer-container {
+    padding: 10px;
+  }
+  .footer-links,
+  .footer-social,
+  .footer-contact {
+    width: 100%;
+  }
+  .footer-links h4,
+  .footer-social h4,
+  .footer-contact h4 {
+    font-size: 1rem;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+  .step {
+    width: 64%;
+    margin-bottom: 20px;
+}
+.button{
+  margin-top: 11px;
+}
+}
+  

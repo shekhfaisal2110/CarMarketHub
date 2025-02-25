@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to the favicon file -->
+  <link rel="icon" href="./file/icon.png" type="image/x-icon">
+  <title>CarMarketHub-Sell Your Car</title>
+  <link rel="stylesheet" href="./css/sellYourCar.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
+</head>
+<body>
+  <section class="sell-your-car-section">
+    <div class="container">
+      <h2 class="section-title">Sell Your Car</h2>
+      <form id="sell-car-form" class="sell-car-form">
+        <label for="car-make">Car Make</label>
+        <input type="text" id="car-make" name="car-make" required>
+        <label for="car-model">Car Model</label>
+        <input type="text" id="car-model" name="car-model" required>
+        <label for="car-year">Year</label>
+        <input type="number" id="car-year" name="car-year" required>
+        <label for="car-price">Price (₹)</label>
+        <input type="number" id="car-price" name="car-price" required>
+        <label for="car-description">Description</label>
+        <textarea id="car-description" name="car-description" rows="4" required></textarea>
+        <label for="car-image">Car Image URL</label>
+        <input type="url" id="car-image" name="car-image" required>
+        <button type="submit" class="button">Submit Car Details</button>
+      </form>
+      <div id="success-message" class="success-message" style="display: none;">
+        <p id="delete-message" class="delete-message" style="display: none;"></p>
+      </div>
+      <div id="car-list" class="car-list">
+        <!-- Car cards will appear here after submission -->
+      </div>
+    </div>
+  </section>
+  <script src="./js/sellYourCar.js"></script>
+</body>
+</html>

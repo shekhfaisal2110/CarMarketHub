@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./file/icon.png" type="image/x-icon">
+  <title>CarMarketHub-My Orders</title>
+  <link rel="stylesheet" href="./css/myOrder.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="section-title">My Orders</h1>
+    </header>
+    <main>
+      <section class="order-list">
+        <div id="orders-container"></div>
+      </section>
+    </main>
+    <div class="buttons">
+      <button onclick="goHome()">Go to Homepage</button>
+      <button onclick="goToCarsPage()">Browse Cars Again</button>
+      <button id="clear-orders-btn" onclick="clearOrders()" style="display: none;">Clear All Orders</button>
+    </div>
+  </div>
+  <script src="./js/myOrder.js"></script>
+</body>
+</html>

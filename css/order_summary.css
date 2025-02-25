@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; 
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-title {
+  font-size: 28px;
+  color: #007bff;
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+/* Container Styling */
+.container {
+  width: 80%;
+  max-width: 1000px;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+/* Hover Effect for Container */
+.container:hover {
+  transform: translateY(-5px); 
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #f0f5f5;
+  border: 4px solid #007bff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+  transition: transform 0.4s ease;
+  max-width: 600px;
+}
+.details-container:hover {
+  transform: translateY(-5px);
+}
+.details-container h2 {
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 10px;
+}
+.details-container p {
+  font-size: 18px;
+  color: #333;
+  background: #e6f7ff;
+  border-left: 6px solid #007bff;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.details-container img {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid #007bff;
+}
+/* Styling for Customer Details */
+.customer-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 3px solid #28a745;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+  transition: transform 0.4s ease;
+  max-width: 500px;
+}
+.customer-details-container:hover {
+  transform: translateY(-5px);
+}
+.customer-details-container h2 {
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 10px;
+}
+.customer-details-container p {
+  font-size: 18px;
+  color: #222;
+  background: #eaffea;
+  border-left: 5px solid #28a745;
+  padding: 12px 18px;
+  margin: 12px 0;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+.customer-details-container p:hover {
+  background-color: #d4fcd4;
+}
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .customer-details-container {
+    padding: 20px;
+  }
+  .customer-details-container h2 {
+    font-size: 22px;
+  }
+  .customer-details-container p {
+    font-size: 16px;
+  }
+}
+/* Button Styling */
+button {
+  background: linear-gradient(135deg, #ff6600, #ffcc00);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+}
+/* Button focus state for accessibility */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6);
+}
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  #order-car-name {
+    font-size: 1.1rem;
+  }
+  #order-car-price {
+    font-size: 1.1rem;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+/* Responsive Design for Mobile Screens */
+@media (max-width: 450px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  #order-car-name {
+    font-size: 1rem;
+  }
+  #order-car-price {
+    font-size: 1rem;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+}

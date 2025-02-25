@@ -1,0 +1,157 @@
+/* General Styles for the Dark Theme */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.fc-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+.container-Car {
+    max-width: 100%;
+    padding: 0 10px;
+}
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.image-display {
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.car-images {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+}
+.left-button {
+    left: 10px;
+    transform: translateY(-50%);
+}
+.right-button {
+    right: 10px;
+    transform: translateY(-50%);
+}
+.thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+/* Thumbnail Container */
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    width: 80%;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
+}
+/* Hide the scrollbar (cross-browser support) */
+.thumbnail-container::-webkit-scrollbar {
+    display: none;  
+}
+.thumbnail-container {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+/* Thumbnails */
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+.thumbnail:hover {
+    transform: scale(1.1);
+    border: 2px solid #ff6600;
+}
+/* Arrow Buttons */
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.left-button {
+    left: 10px;
+}
+.right-button {
+    right: 10px;
+}
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .fc-title {
+        font-size: 1.5em;
+    }
+    .gallery-container {
+        flex-direction: column;
+    }
+    .image-display {
+        width: 90%;
+    }
+    .nav-button {
+        font-size: 24px;
+    }
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+}
+@media (max-width: 450px) {
+    .fc-title {
+        font-size: 1.2em;
+    }
+    .image-display {
+        width: 100%;
+    }
+    .nav-button {
+        font-size: 20px;
+    }
+    .thumbnail {
+        width: 40px;
+        height: 40px;
+    }
+}
+
